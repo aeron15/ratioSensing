@@ -112,8 +112,7 @@ i=1;
 glc = [-Inf   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0     1]
 
 
-%load('C:\Users\RE151\Dropbox\gal_paper\Data\A10H3\plates_hists_EMD_stats')
-%load('../data/20121026_glu_gal/output/plates_hists_EMD_stats');
+load('../data/A10H3/output/plates_hists_EMD_stats');
 
 plates = {'A10a__H3a' 'A10b__H3b' 'A10c__H3c' 'A10d__H3d'};
 

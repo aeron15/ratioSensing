@@ -226,7 +226,7 @@ th_const = 2.7;
 i=1;
 glc = [-Inf   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0     1]
 
-load('../data/A10H3/plates_hists_EMD_stats')
+load('../data/A10H3/output/plates_hists_EMD_stats')
 
 plates = {'A10a__H3a' 'A10b__H3b' 'A10c__H3c' 'A10d__H3d'};
 
@@ -380,8 +380,7 @@ p = 1; i=1;j = 1;
 plates = {'A10a__H3a' 'A10b__H3b' 'A10c__H3c' 'A10d__H3d'};
 
 d = [0,0;0,12;8,0;8,12;16,0;16,12];
-%load('C:\Users\ys151\Dropbox\gal_paper\Data\A10H3\plates_hists_EMD_stats')
-load('../../../Data/A10H3/plates_hists_EMD_stats')
+load('../data/A10H3/output/plates_hists_EMD_stats')
 
 data = struct2cell(plates_hists);
 
