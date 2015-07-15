@@ -23,7 +23,7 @@ glc_final = [0 2.^[-9:0.5:0]];
 
 cmap='jet';%cbrewer('seq', 'YlOrRd', 25);
 %figure_folder = 'C:\Users\ys151\Dropbox\gal_paper\figures\Matlab Source\';
-figure_folder = '../../../papers/';
+figure_folder = '.';
 % cmap = buildcmap_YS([254,237,222;253,190,133;253,141,60;217,71,1]/255);
 
 %% Replicate 1
@@ -181,8 +181,7 @@ Set_fig_RE(figure(i),17,12,12)
 
 glc = [-Inf   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0     1]
 
-%load('C:\Users\ys151\Dropbox\gal_paper\Data\A10H3\plates_hists_EMD_stats')
-load('../../../Data/A10H3/plates_hists_EMD_stats')
+load('../data/A10H3/output/plates_hists_EMD_stats')
 
 plates = {'A10a__H3a' 'A10b__H3b' 'A10c__H3c' 'A10d__H3d'};
 
@@ -586,8 +585,7 @@ p = 1; i=7;j = 4;
 
 plates = {'Plate_A' 'Plate_B' 'Plate_C' 'Plate_D' 'Plate_E' 'Plate_F'};
 d = [0,0;0,12;8,0;8,12;16,0;16,12];
-%load('C:\Users\Savir\Dropbox\gal_paper\Data\s288c\20140217_4283\output\plates_hists_EMD')
-load('../../../Data/s288c/20140217_4283/output/plates_hists_EMD')
+load('../data/s288c/20140217_4283/output/plates_hists_EMD')
 
 data = struct2cell(plates_hists);
 
