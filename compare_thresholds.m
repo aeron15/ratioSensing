@@ -62,7 +62,7 @@ for i = [1 2 3]
     title(file_names{i})
     filename=['output/contour_WT_' file_names{i}];
     box off;
-    export_fig(filename, '-pdf','-nocrop');
+    export_fig_specific_path(filename, '-pdf','-nocrop');
     close all;
     
 end

@@ -1,7 +1,7 @@
 function driver_plot_figures()
 
 %% Plot figure 1B. Double gradient and decision front.
-%plot_figure1B
+plot_figure1B
 
 %% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1
 %AnalyzeInductionData()
