@@ -60,7 +60,7 @@ for i = [1 2 3]
     end
     %print('-dtiff','-r1000',[figure_folder,'measures',num2str(i)]);
     title(file_names{i})
-    filename=['output/contour_WT_' file_names{i}];
+    filename=['contour_WT_' file_names{i}];
     box off;
     export_fig_specific_path(filename, '-pdf','-nocrop');
     close all;
