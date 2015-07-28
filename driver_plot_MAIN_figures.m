@@ -1,15 +1,14 @@
-function driver_plot_figures()
+function driver_plot_MAIN_figures()
 
-<<<<<<< HEAD
-%% Plot figure 1B. Double gradient and decision front.
-plot_figure1B
-=======
 %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
-plot_figure1B
+plot_fig1B()
+
+%% Plot schematic of figure 4A
+plot_fig4A()
+
 
 %% Plot figure 1C. Plot S plots. In downloads.
 
->>>>>>> 216122942e1f28f8d0927907ce712619dc1de128
 
 %% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1
 %AnalyzeInductionData()
@@ -21,7 +20,7 @@ plot_figure1B
 % figure3
 % figure3_YS
 
-%% Generates the WT and the gal2 delete experiment 
+%% Generates the WT and the gal2 delete experiment
 %figure4
 
 %% Generates the different models of ratio sensing and how they can be achieved. Fix output data
