@@ -46,7 +46,7 @@ set(xlabh,'Position',get(xlabh,'Position') - [0 .02 0])
 
 Set_fig_RE(figure(4),16,16,20)
 
-filename=['FigS2A_S288C_Single_responses_WT'];
+filename=['FigS2_S288C_Single_responses_WT'];
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
 %%
@@ -80,7 +80,7 @@ set(ylabh,'Position',get(ylabh,'Position') - [0 0.5 0])
 colormap(cmap);
 Set_fig_RE(figure(1),18,18,18)
 
-filename=['Heatmap_Predicted_response_WT_S288C'];
+filename=['FigS2_Heatmap_Predicted_response_WT_S288C'];
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 %%
 fig2=figure(2)
@@ -103,7 +103,7 @@ set(ylabh,'Position',get(ylabh,'Position') - [0 0.2 0])
 colormap(cmap)
 Set_fig_RE(figure(2),18,18,18)
 
-filename=['Heatmap_Measured_response_WT_S288C'];
+filename=['FigS2_Heatmap_Measured_response_WT_S288C'];
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
 close all;
