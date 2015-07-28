@@ -1,7 +1,10 @@
 function driver_plot_figures()
 
-%% Plot figure 1B. Double gradient and decision front.
-%plot_figure1B
+%% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
+plot_figure1B
+
+%% Plot figure 1C. Plot S plots. In downloads.
+
 
 %% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1
 %AnalyzeInductionData()
@@ -22,6 +25,7 @@ function driver_plot_figures()
 %% Plots the multiplication of the single input functions, I generated a separate version with the stitched data.
 % This script also plots the effect of depletion
 %predictResponse()
+%predict_response_multiplication()%from stitched data
 
 %% Plots the data of the heterozygous deletes
 %figureSI4
@@ -42,5 +46,5 @@ function driver_plot_figures()
 %CompareMig1localiztionToGal80
 
 %% Plot previously assay concentrations of galactose and glucose. The lowest concentrations are actually NO  concentrations.
-PlotDecision_Fronts_Table()
+%PlotDecision_Fronts_Table()
 end

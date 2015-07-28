@@ -83,7 +83,7 @@ for i = [1 2 3]
     set(gcf, 'color', 'none');
     set(gca, 'color', 'none');
     filename=['contour_heatmap_WT_fitness' file_names{i}];
-    %export_fig(filename, '-pdf','-nocrop');
+    %export_fig_specific_path(filename, '-pdf','-nocrop');
     close all;
     
 end

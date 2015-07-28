@@ -66,8 +66,8 @@ for i = [1 2 3]
     
     Set_fig_RE(figure(i),17,12,12)
     title(file_names{i})
-    filename=['output/contour_heatmap_WT_2' file_names{i}];
-    %export_fig(filename, '-pdf','-nocrop');
+    filename=['contour_heatmap_WT_2' file_names{i}];
+    %export_fig_specific_path(filename, '-pdf','-nocrop');
     close all;
     
 end
