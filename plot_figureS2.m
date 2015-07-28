@@ -14,12 +14,11 @@ glc_m = 2.^[glc_conc(1)-1:0.5:glc_conc(end)+0.5];
 
 load('../data/20140701_stitched_areas/output/M_D_stitched.mat');
 
-%% single response
+%% single response concentrations
 cmap=cbrewer('seq', 'YlOrRd', 25);
 
 gal_final=gal_final(2:end);
 glc_final=glc_final(2:end);
-%%
 gal_r_area = D{1}(1,:);
 glc_r_area= D{1}(:,end-2); % 2% GAL
 
@@ -47,17 +46,17 @@ set(xlabh,'Position',get(xlabh,'Position') - [0 .02 0])
 
 Set_fig_RE(figure(4),16,16,20)
 
-% filename=['output/Single_responses_WT'];
-% export_fig_specific_path(filename, '-eps','-transparent','-nocrop');
+filename=['FigS2A_S288C_Single_responses_WT'];
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
 %%
+
 for i = 1:length(gal_r_area)
     for j = 1:length(glc_r_area)
         R(j,i) = gal_r_area(i)*glc_r_area(j);
     end
 end
 [D_R,M_R] = ParseHeatmapMat(R);
-%%
 
 fig1=figure(1)
 scrsz = get(0,'ScreenSize');
@@ -81,8 +80,8 @@ set(ylabh,'Position',get(ylabh,'Position') - [0 0.5 0])
 colormap(cmap);
 Set_fig_RE(figure(1),18,18,18)
 
-% filename=['Predicted_response_WT'];
-% export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+filename=['Heatmap_Predicted_response_WT_S288C'];
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 %%
 fig2=figure(2)
 scrsz = get(0,'ScreenSize');
@@ -104,7 +103,8 @@ set(ylabh,'Position',get(ylabh,'Position') - [0 0.2 0])
 colormap(cmap)
 Set_fig_RE(figure(2),18,18,18)
 
-% filename=['Measured_response_WT'];
-% export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+filename=['Heatmap_Measured_response_WT_S288C'];
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
+close all;
 end
