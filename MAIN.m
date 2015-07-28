@@ -15,7 +15,7 @@ path_data='../output_ratio_sensing/';
 
 
 %% Plot main figures of the paper
-driver_plot_MAIN_figures()
+%driver_plot_MAIN_figures()
 
 %% Plot supplementary figures
 

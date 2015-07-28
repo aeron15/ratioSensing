@@ -6,7 +6,7 @@ plot_fig1B()
 
 
 %% Plot schematic of figure 4A
-plot_fig4A()
+%plot_fig4A()
 
 
 %% Plot figure 1C. Plot S plots. In downloads.
