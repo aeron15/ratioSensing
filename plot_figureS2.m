@@ -48,7 +48,7 @@ set(xlabh,'Position',get(xlabh,'Position') - [0 .02 0])
 Set_fig_RE(figure(4),16,16,20)
 
 % filename=['output/Single_responses_WT'];
-% export_fig(filename, '-eps','-transparent','-nocrop');
+% export_fig_specific_path(filename, '-eps','-transparent','-nocrop');
 
 %%
 for i = 1:length(gal_r_area)
@@ -82,7 +82,7 @@ colormap(cmap);
 Set_fig_RE(figure(1),18,18,18)
 
 % filename=['Predicted_response_WT'];
-% export_fig(filename, '-pdf','-transparent','-nocrop');
+% export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 %%
 fig2=figure(2)
 scrsz = get(0,'ScreenSize');
@@ -105,6 +105,6 @@ colormap(cmap)
 Set_fig_RE(figure(2),18,18,18)
 
 % filename=['Measured_response_WT'];
-% export_fig(filename, '-pdf','-transparent','-nocrop');
+% export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
 end
