@@ -10,11 +10,9 @@ glc_final = [0 2.^[glc_conc]];
 gal_m = 2.^[gal_conc(1)-1:0.5:gal_conc(end)+0.5];
 glc_m = 2.^[glc_conc(1)-1:0.5:glc_conc(end)+0.5];
 
-%load('../data/20140701_stitched_areas/output/M_for_replicate_original_supp_material.mat')
 load('../data/20140701_stitched_areas/output/M_D_stitched.mat')
 
 %% Plot figure 
-
 color_vec = [1 0 0;0 0 0;0 0 1;0 1/2 0;0 0 1/2;1 0.5 0];
 file_names={'area','perc','mean'};
 

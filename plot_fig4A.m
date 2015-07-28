@@ -11,7 +11,6 @@ glc_final = [0 2.^[glc_conc]];
 gal_m = 2.^[gal_conc(1)-1:0.5:gal_conc(end)+0.5];
 glc_m = 2.^[glc_conc(1)-1:0.5:glc_conc(end)+0.5];
 
-%load('../data/20140701_stitched_areas/output/M_for_replicate_original_supp_material.mat')
 load('../data/20140701_stitched_areas/output/M_D_stitched.mat')
 
 %%
@@ -81,8 +80,8 @@ for i = [1]%1 is the area metric [1 2 3] to plot also mean and percentage
     set(gca, 'color', 'none');
     filename=['contour_heatmap_WT_fitness' file_names{i}];
     export_fig_specific_path(filename, '-pdf','-nocrop');
+    close all;
     
 end
 
-close all;
 end
