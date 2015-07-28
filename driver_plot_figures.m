@@ -1,15 +1,10 @@
 function driver_plot_figures()
 
-<<<<<<< HEAD
-%% Plot figure 1B. Double gradient and decision front.
-plot_figure1B
-=======
 %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
 plot_figure1B
 
 %% Plot figure 1C. Plot S plots. In downloads.
 
->>>>>>> 216122942e1f28f8d0927907ce712619dc1de128
 
 %% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1
 %AnalyzeInductionData()
