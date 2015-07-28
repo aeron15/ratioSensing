@@ -1,7 +1,20 @@
-function compare_thresholds_fig1B(gal_final,glc_final,gal_m,glc_m,M,D)
+function plot_fig1B()
 
-%COMPARE_THRESHOLDS_FIG1B plots the heatmap of figrure 1 and the decision
-%front
+%PLOT_FIG1B plots the heatmap of figrure 1 and the decision. Inspired by
+%compare_thresholds_fig1B
+
+%% LOAD settings for the comparison of S288C
+
+gal_conc=-9:0.5:2;
+glc_conc=-9:0.5:0;
+gal_final = [0 2.^[gal_conc]];
+glc_final = [0 2.^[glc_conc]];
+
+gal_m = 2.^[gal_conc(1)-1:0.5:gal_conc(end)+0.5];
+glc_m = 2.^[glc_conc(1)-1:0.5:glc_conc(end)+0.5];
+
+load('../data/20140701_stitched_areas/output/M_for_replicate_original_supp_material.mat');
+load('../data/20140701_stitched_areas/output/M_D_stitched.mat');
 
 %%
 color_vec = [1 0 0;0 0 0;0 0 1;0 1/2 0;0 0 1/2;1 0.5 0];
@@ -25,8 +38,6 @@ perc_vec = [0.25];
 
 for i = [1 2 3]
     
-    %    M{i}(7,3) = mean([M{i}(6,3),M{i}(8,3)]);
-    %    M_area{i}(1,1) = 1;
     figure(i)
     h = pcolor(log2(gal_m),log2(glc_m),M{i});hold on;
     axis_handle = gca;
@@ -35,7 +46,6 @@ for i = [1 2 3]
     axis square
     set(axis_handle,'xtick',x_tick([1  3 5:2:25])+0.25,'xticklabel',['No', mat2cell(-9:1:2)]);
     set(axis_handle,'ytick',y_tick([1  3 5:2:22])+0.25,'yticklabel',['No', mat2cell(-9:1:0)]);
-    %h = colorbar('location','northoutside');
     colormap(cmap)
     
     for j = 1:length(perc_vec)
@@ -68,7 +78,7 @@ for i = [1 2 3]
     
     Set_fig_RE(figure(i),17,12,12)
     title(file_names{i})
-    filename=['contour_heatmap_WT_FIG1B_' file_names{i}];
+    filename=['heatmap_decision_front_WT_FIG1B_' file_names{i}];
     export_fig_specific_path(filename, '-pdf','-nocrop');
     
 end

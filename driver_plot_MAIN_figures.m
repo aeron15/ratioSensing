@@ -1,7 +1,9 @@
 function driver_plot_MAIN_figures()
 
 %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
-plot_figure1B
+%plot_figure1B
+
+plot_fig1B()
 
 %% Plot figure 1C. Plot S plots. In downloads.
 
