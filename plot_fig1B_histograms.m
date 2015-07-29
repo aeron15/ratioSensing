@@ -51,6 +51,7 @@ yy4(isnan(yy4))=0;
 %%
 figure(10)
 plot(xx,yy/sum(yy),'k','linewidth',6);box off;
+%ylim([0 0.08])
 Set_fig_RE(figure(10),25,18,18)
 filename='Figure1B_hist_1';
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
@@ -59,6 +60,7 @@ export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 figure(11)
 plot(xx,yy2/sum(yy2),'k','linewidth',6);box off;
 Set_fig_RE(figure(11),25,18,18)
+%ylim([0 0.08])
 filename='Figure1B_hist_2';
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
@@ -66,6 +68,7 @@ export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 figure(12)
 plot(xx,yy3/sum(yy3),'k','linewidth',6);box off;
 Set_fig_RE(figure(12),25,18,18)
+%ylim([0 0.08])
 filename='Figure1B_hist_3';
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
