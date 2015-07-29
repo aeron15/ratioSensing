@@ -1,4 +1,4 @@
-function S288cSurfaceFit
+function s288cSurfaceFit
 
 %% Collect and combine all the s288c replictaes into one format
 
@@ -21,7 +21,7 @@ off_peak = 2;
 gal_final = [0 2.^[-9:0.5:2]];
 glc_final = [0 2.^[-9:0.5:0]];
 
-cmap='jet';%cbrewer('seq', 'YlOrRd', 25);
+cmap=cbrewer('seq', 'YlOrRd', 25);
 
 figure_folder = '.';
 
@@ -570,6 +570,7 @@ print('-dtiff','-r1000',[figure_folder,'1D2']);
         xlim([10^-4,10^5]);ylim([-0.01 1.01])
 axis('square');
 
+end
 
 
 
