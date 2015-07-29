@@ -14,8 +14,12 @@ end
 path_data='../output_ratio_sensing/';
 
 
-%% Plot figures of the paper
-driver_plot_figures()
+%% Plot main figures of the paper
+%driver_plot_MAIN_figures()
 
+%% Plot supplementary figures
+
+driver_plot_SUPP_figures()
+ 
 %% generates the uptake heat maps
 Transporter_competition

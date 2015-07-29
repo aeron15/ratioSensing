@@ -1,14 +1,21 @@
-function predict_responses(gal_final,glc_final,gal_m,glc_m,D,M)
+function plot_figureS2()
+% PLOT_FIGURES2
+% Measured response compared to a multiplicative prediction for S288C
 
-%Predict Responses by multiplying the single input responses
+%% LOAD settings for the comparison of S288C
+
+gal_conc=-9:0.5:2;
+glc_conc=-9:0.5:0;
+gal_final = [0 2.^[gal_conc]];
+glc_final = [0 2.^[glc_conc]];
+
+gal_m = 2.^[gal_conc(1)-1:0.5:gal_conc(end)+0.5];
+glc_m = 2.^[glc_conc(1)-1:0.5:glc_conc(end)+0.5];
+
+load('../data/20140701_stitched_areas/output/M_D_stitched.mat');
 
 %% single response
-
-% gal_r_area = E_area{1}(1,:);
-% glc_r_area= E_area{1}(:,end-2); % 2% GAL
-
 cmap=cbrewer('seq', 'YlOrRd', 25);
-
 
 gal_final=gal_final(2:end);
 glc_final=glc_final(2:end);
@@ -16,10 +23,6 @@ glc_final=glc_final(2:end);
 gal_r_area = D{1}(1,:);
 glc_r_area= D{1}(:,end-2); % 2% GAL
 
-% figure;
-% plot(glc_r_area)
-% figure;
-% plot(gal_r_area)
 %%
 fig4=figure(4);
 set(fig4,'Position',[ 1   179   495   627])
@@ -45,7 +48,7 @@ set(xlabh,'Position',get(xlabh,'Position') - [0 .02 0])
 Set_fig_RE(figure(4),16,16,20)
 
 % filename=['output/Single_responses_WT'];
-% export_fig(filename, '-eps','-transparent','-nocrop');
+% export_fig_specific_path(filename, '-eps','-transparent','-nocrop');
 
 %%
 for i = 1:length(gal_r_area)
@@ -79,7 +82,7 @@ colormap(cmap);
 Set_fig_RE(figure(1),18,18,18)
 
 % filename=['Predicted_response_WT'];
-% export_fig(filename, '-pdf','-transparent','-nocrop');
+% export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 %%
 fig2=figure(2)
 scrsz = get(0,'ScreenSize');
@@ -102,6 +105,6 @@ colormap(cmap)
 Set_fig_RE(figure(2),18,18,18)
 
 % filename=['Measured_response_WT'];
-% export_fig(filename, '-pdf','-transparent','-nocrop');
+% export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
 end
