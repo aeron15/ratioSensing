@@ -6,4 +6,5 @@ plot_figureS2()
 %% Fig. S6. Different metrics for quantifying the response of S288C
 plot_figure_S6
 
+plot_figure_S6C_S_plot
 end
