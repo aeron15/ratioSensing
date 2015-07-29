@@ -39,5 +39,6 @@ Set_fig_RE(figure(6),14,14,14);
 filename='Figure_1C_S_plot_WT';
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
+close all;
 
 

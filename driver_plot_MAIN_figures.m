@@ -9,7 +9,6 @@ plot_figure1C()
 %% Plot schematic of figure 4A
 plot_fig4A()
 
-
 %% Plot figure 1C. Plot S for separate replicates. Probably need the one for the data on the figure.
 %s288cSurfaceFit
 
@@ -46,8 +45,6 @@ plot_fig4A()
 %CompareMetrics
 
 
-%% %Makes S plot and replicates. Plots the histograms for figure 1 too.
-s282cSurfaceFit
 
 %% Compare Mig1 localization to gal80?
 %CompareMig1localiztionToGal80

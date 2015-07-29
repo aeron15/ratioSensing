@@ -46,5 +46,4 @@ Set_fig_RE(figure(7),18,18,22);
 
 
 filename='Figure_S6C_S_plot_WT_different_metrics';
-export_fig_specific_path
-(filename, '-pdf','-transparent','-nocrop');
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
