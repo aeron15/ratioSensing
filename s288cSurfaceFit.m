@@ -1,6 +1,6 @@
-function s282cSurfaceFit
+function S288cSurfaceFit
 
-%% Collect and combine all the s282c replictaes into one format
+%% Collect and combine all the s288c replictaes into one format
 
 % M matrix for ploting including zeros in a sperate row
 % D matrix for fitting purposes

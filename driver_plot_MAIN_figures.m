@@ -1,14 +1,14 @@
 function driver_plot_MAIN_figures()
 
 %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
-plot_fig1B()
+%plot_fig1B()
 
 %% Plot schematic of figure 4A
-plot_fig4A()
+%plot_fig4A()
 
 
-%% Plot figure 1C. Plot S plots. In downloads.
-
+%% Plot figure 1C. Plot S for separate replicates. Probably need the one for the data on the figure.
+s288cSurfaceFit
 
 %% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1
 %AnalyzeInductionData()
@@ -44,7 +44,7 @@ plot_fig4A()
 
 
 %% %Makes S plot and replicates. Plots the histograms for figure 1 too.
-%s282cSurfaceFit
+s282cSurfaceFit
 
 %% Compare Mig1 localization to gal80?
 %CompareMig1localiztionToGal80
