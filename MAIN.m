@@ -13,6 +13,7 @@ end
 
 path_data='../output_ratio_sensing/';
 
+close all;
 
 %% Plot main figures of the paper
 driver_plot_MAIN_figures()

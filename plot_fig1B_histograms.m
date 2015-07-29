@@ -1,12 +1,12 @@
 function plot_fig1B_histograms()
+%PLOT_fig1B_histograms
+%cells in the population show induction (IF >0.2). 
+%(Right) Comparison of cells monitored by live mi- croscopy to FCM at three sugar mixtures, denoted by numbered squares
 
-%% Pull out specific histogram of a well
-
-%Facs
-
+%% Pull out specific histogram of a well in a double gradient
 % from replicate 2 (-6.5,-8) (-6.5,-2)
-p = 1; i=7;j = 4;
 
+p = 1; i=7;j = 4;
 
 plates = {'Plate_A' 'Plate_B' 'Plate_C' 'Plate_D' 'Plate_E' 'Plate_F'};
 d = [0,0;0,12;8,0;8,12;16,0;16,12];
@@ -25,8 +25,6 @@ plate_name = 'Plate_C';well_name = 'D10';
 
 plate_name = 'Plate_D';well_name = 'D02';
 [x4,y4] = GetHistogram(plates,data,plates_hists,plate_name,well_name);
-
-
 
 max_x = max([max(x),max(x2),max(x3),max(x4)]);
 min_x = min([min(x),min(x2),min(x3),min(x4)]);
@@ -50,22 +48,29 @@ yy3(isnan(yy3))=0;
 yy4 = interp1(x4,y4,xx,'linear');yy4(yy4<0)=0;
 yy4(isnan(yy4))=0;
 
-
+%%
 figure(10)
 plot(xx,yy/sum(yy),'k','linewidth',6);box off;
 Set_fig_RE(figure(10),25,18,18)
-print('-dpdf','-r1000',[figure_folder,'1B1']);
+filename='Figure1B_hist_1';
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+
 
 figure(11)
 plot(xx,yy2/sum(yy2),'k','linewidth',6);box off;
 Set_fig_RE(figure(11),25,18,18)
-print('-dtiff','-r1000',[figure_folder,'1B2']);
+filename='Figure1B_hist_2';
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+
 
 figure(12)
 plot(xx,yy3/sum(yy3),'k','linewidth',6);box off;
 Set_fig_RE(figure(12),25,18,18)
-print('-dtiff','-r1000',[figure_folder,'1B3']);
+filename='Figure1B_hist_3';
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
-figure(13)
-plot(xx,yy4,'k','linewidth',6);box off;
-Set_fig_RE(figure(13),25,18,18)
+% figure(13)
+% plot(xx,yy4,'k','linewidth',6);box off;
+% Set_fig_RE(figure(13),25,18,18)
+
+end

@@ -2,11 +2,12 @@ function driver_plot_MAIN_figures()
 
 %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
 %plot_fig1B()
-
+plot_fig1B_histograms()
 %% Plot figure 1C.Fraction of inducing cells as a function of the ratio of galactose and glucose concentrations.
-%plot_figure1C()
+plot_figure1C()
 
 %% Plot figure 1D()
+%Comparison of models of signal integration (SI Appendix) by threshold sensing (Upper) and ratio sensing (Lower), displayed as in B and C.
 plot_1D()
 
 %% Plot schematic of figure 4A
