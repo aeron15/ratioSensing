@@ -1,27 +1,25 @@
 function driver_plot_MAIN_figures()
 
 %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
-% plot_fig1B()
+plot_fig1B()
 plot_fig1B_histograms()
-% 
-% %% Plot figure 1C.Fraction of inducing cells as a function of the ratio of galactose and glucose concentrations.
-% plot_figure1C()
-% 
-% %% Plot figure 1D()
-% %Comparison of models of signal integration (SI Appendix) by threshold sensing (Upper) and ratio sensing (Lower), displayed as in B and C.
-% plot_1D()
 
-%% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1
+%% Plot figure 1C.Fraction of inducing cells as a function of the ratio of galactose and glucose concentrations.
+plot_figure1C()
+
+%% Plot figure 1D()
+%Comparison of models of signal integration (SI Appendix) by threshold sensing (Upper) and ratio sensing (Lower), displayed as in B and C.
+plot_1D()
+
+%% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1.
+%Decision fronts, calculated as in B, for three strains of S. cerevisiae.
 plot_figure1E()
-% AnalyzeInductionData_A10_H3()
 
 %% Plot schematic of figure 4A
-%plot_fig4A()
+plot_fig4A()
 
 %% Plot figure 1C. Plot S for separate replicates. Probably need the one for the data on the figure.
 %s288cSurfaceFit
-
-
 
 %% Plots mig1? and WT data, also gal80? and WT
 %alaso adds the decision fronts to the deletes (but decision front is
@@ -50,8 +48,6 @@ plot_figure1E()
 % Check the version for the stitched data with lower concentrations. Many
 % figures of the main paper are here too.
 %CompareMetrics
-
-
 
 %% Compare Mig1 localization to gal80?
 %CompareMig1localiztionToGal80
