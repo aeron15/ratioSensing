@@ -17,15 +17,12 @@ end
 th_const = 2.5;
 off_peak = 2;
 
-
 gal_final = [0 2.^[-9:0.5:2]];
 glc_final = [0 2.^[-9:0.5:0]];
 
 cmap=cbrewer('seq', 'YlOrRd', 25);
 
-
 %% mig1  WT
-
 load('../data/20140508_mig1_del/output/plates_hists')
 gal = [0 2.^[-9:0.5:2]];
 glc = [0 2.^[-10.5:0.5:0]];
@@ -39,15 +36,11 @@ plates = {'mig1_del'};
 [E_area{1},E_prec{1},E_mean{1}] = Plates2matOther(plates,data,plates_hists,d,map,th_const,off_peak);
 
 % remove low and high gloucse rows:
-
-%
 i = 1;
 [D_area{i},M_area{i}] = ParseHeatmapMat(E_area{i});
 [D_area{i},M_area{i}] = ParseHeatmapMat(E_prec{i});
 
 figure('Name','mig1 area')
-%n=10;thres=.2;
-%M_area{i}=M_area{i}.^n./(M_area{i}.^n+thres.^n);
 h = pcolor(M_area{i});
 set(h,'edgecolor','none');
 axis square
@@ -57,7 +50,7 @@ set(gca,'ytick',[1 2 3 5:2:22]+0.5,'yticklabel',['No',' ', {-6:2:0}]);
 colorbar 
 colormap(cmap)
 
-Set_fig_YS(figure(1),12,12,12)
+Set_fig_RE(figure(1),12,12,12)
 %%
 filename='Figure_2D_mig1delete';
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
