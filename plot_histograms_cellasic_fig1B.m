@@ -1,71 +1,16 @@
 function plot_histograms_cellasic_fig1B()
+%PLOT_HISTOGRAMS_CELLASIC_FIG1B
+%Comparison of cells monitored by live mi- croscopy to FCM at three sugar mixtures, denoted by numbered squares
+% inspired by CellAcisMain_17_APR_2014_Gal1_Dynamics which compiles all the
+% data from the server
 
-% close all
-% clear all
-% clc
-% %%
-% %folder_name = '\\research.files.med.harvard.edu\sysbio\Springer Lab\Lab Members\Yoni\Nikon\17APR Gal1 dynamics\images\'
-% folder_name='/Volumes/sysbio/Springer Lab/Lab Members/Yoni/Nikon/17APR Gal1 dynamics/images/'
-%     
-%pos_num = 20;
+load('../data/Gal1DynamicsOnix_17_APR_2014/data.mat')
+
 dt=15/60;
-% ind_position = [1:pos_num];
-% %%
-% close all
-% for i = 1:length(ind_position)
-%     
-%     
-%     files_rfp = dir([folder_name,'pos',num2str(ind_position(i)),'/*rfp*.tif']);
-%     [val_bf,ind_bf] = sort([files_rfp.datenum]);
-%     files_rfp = files_rfp(ind_bf);
-%     
-%     
-%     files_yfp = dir([folder_name,'pos',num2str(ind_position(i)),'/*yfp*.tif']);
-%     [val_bf,ind_bf] = sort([files_yfp.datenum]);
-%     files_yfp = files_yfp(ind_bf);
-%     
-%     j0=0;
-%     for j = 1:50
-%         [i,j]
-%         
-%         
-%         I_yfp =  (imread([folder_name,'pos',num2str(ind_position(i)),'/',files_yfp(j+j0).name]));
-%         
-%         I_rfp =  (imread([folder_name,'pos',num2str(ind_position(i)),'/',files_rfp(j+j0).name]));
-%         
-%         BW_rfp = im2bw( mat2gray(I_rfp) ,graythresh(mat2gray(I_rfp )));
-%         BW_yfp = im2bw( mat2gray(I_yfp),graythresh(mat2gray(I_yfp)));
-%         
-%         area_yfp(i,j) = length(find(BW_yfp));
-%         area_rfp(i,j) = length(find((BW_rfp)));
-%         %yfp
-%         xx = double(I_yfp);
-%         yy = xx.*BW_rfp;
-%         ind = find(yy>0);        
-%         yfp_hist{i,j} = yy(ind);
-%         
-%         %rfp
-%         xx = double(I_rfp);
-%         yy = xx.*BW_rfp;
-%         ind = find(yy>0);
-%         rfp_hist{i,j} = yy(ind);
-%         
-%     end
-%     
-% end
-% % 
-% % 
-% % save('C:\Users\ys151\Desktop\WorkingZone\Gal\Gal1DynamicsOnix_17_APR_2014\data.mat')
-% 
-%%
-%load('C:\Users\ys151\Desktop\WorkingZone\Gal\Gal1DynamicsOnix_17_APR_2014\data.mat')
-load('Gal1DynamicsOnix_17_APR_2014/data.mat')
+T =[0:49]*dt;
 
+%%
 figure(1)
-T =[0:49]*dt
-
-
-%%
 plot(T,area_rfp,'.-r');ylim([0 1e6])
 
 %% Calcualte growth rate
@@ -202,86 +147,86 @@ for i = 1:4
 end
     %Set_fig_YS(figure(3),12,18,18)
 
-%% Print images for micrographs
-
-% close all
-
-time_probe = [4 8 16 32 40]+1;
-
-%time_probe=32;
-TT = T(time_probe);
-% 5 7 14 19
-ind_position = [5 7 14 19];
-%ind_position = [5]
-
-I_yfp=[];
-I_rfp=[];
-I_bf=[];
-II_rfp=[];
-II_yfp = [];
-II_bf=[];
-for i = 1:length(ind_position)
-    
-    %folder_name = '\\research.files.med.harvard.edu\sysbio\Springer Lab\Lab Members\Yoni\Nikon\17APR Gal1 dynamics\images\';
-    folder_name='/Volumes/sysbio/Springer Lab/Lab Members/Yoni/Nikon/17APR Gal1 dynamics/images/'
-
-    files_bf = dir([folder_name,'pos',num2str(ind_position(i)),'/*bf*.tif']);
-    [val_bf,ind_bf] = sort([files_bf.datenum]);
-    files_bf = files_bf(ind_bf);
-    
-    
-    files_yfp = dir([folder_name,'pos',num2str(ind_position(i)),'/*yfp*.tif']);
-    [val_bf,ind_bf] = sort([files_yfp.datenum]);
-    files_yfp = files_yfp(ind_bf);
-    
-    files_rfp = dir([folder_name,'pos',num2str(ind_position(i)),'/*rfp*.tif']);
-    [val_bf,ind_bf] = sort([files_rfp.datenum]);
-    files_rfp = files_rfp(ind_bf);
-    
-    
-    
-    j0=0;
-    I_yfp=[];
-    I_rfp=[];
-    I_bf=[];
-    for j = 1:length(time_probe)
-        [i,j]
-        
-        
-        I_yfp = [I_yfp, (imread([folder_name,'pos',num2str(ind_position(i)),'/',files_yfp(time_probe(j)).name]))];
-        
-        I_rfp = [I_rfp, (imread([folder_name,'pos',num2str(ind_position(i)),'/',files_rfp(time_probe(j)).name]))];
-        
-        I_bf = [I_bf, mat2gray(imread([folder_name,'pos',num2str(ind_position(i)),'/',files_bf(time_probe(j)).name]))];
-
-    end
-        
-    II_bf = [II_bf;I_bf];
-    II_rfp = [II_rfp;I_rfp];
-    II_yfp = [II_yfp;I_yfp]; 
-%     I_yfp = mat2gray(I_yfp);
-
-     
-    
-    %figure
-%     imshowpair(I_yfp,I_rfp,'method','blend','scaling','none');
-    %imshow(I_rfp,[0 1]);
-
-end
+% %% Print images for micrographs
+% 
+% % close all
+% 
+% time_probe = [4 8 16 32 40]+1;
+% 
+% %time_probe=32;
+% TT = T(time_probe);
+% % 5 7 14 19
+% ind_position = [5 7 14 19];
+% %ind_position = [5]
+% 
+% I_yfp=[];
+% I_rfp=[];
+% I_bf=[];
+% II_rfp=[];
+% II_yfp = [];
+% II_bf=[];
+% for i = 1:length(ind_position)
+%     
+%     %folder_name = '\\research.files.med.harvard.edu\sysbio\Springer Lab\Lab Members\Yoni\Nikon\17APR Gal1 dynamics\images\';
+%     folder_name='/Volumes/sysbio/Springer Lab/Lab Members/Yoni/Nikon/17APR Gal1 dynamics/images/'
+% 
+%     files_bf = dir([folder_name,'pos',num2str(ind_position(i)),'/*bf*.tif']);
+%     [val_bf,ind_bf] = sort([files_bf.datenum]);
+%     files_bf = files_bf(ind_bf);
+%     
+%     
+%     files_yfp = dir([folder_name,'pos',num2str(ind_position(i)),'/*yfp*.tif']);
+%     [val_bf,ind_bf] = sort([files_yfp.datenum]);
+%     files_yfp = files_yfp(ind_bf);
+%     
+%     files_rfp = dir([folder_name,'pos',num2str(ind_position(i)),'/*rfp*.tif']);
+%     [val_bf,ind_bf] = sort([files_rfp.datenum]);
+%     files_rfp = files_rfp(ind_bf);
+%     
+%     
+%     
+%     j0=0;
+%     I_yfp=[];
+%     I_rfp=[];
+%     I_bf=[];
+%     for j = 1:length(time_probe)
+%         [i,j]
+%         
+%         
+%         I_yfp = [I_yfp, (imread([folder_name,'pos',num2str(ind_position(i)),'/',files_yfp(time_probe(j)).name]))];
+%         
+%         I_rfp = [I_rfp, (imread([folder_name,'pos',num2str(ind_position(i)),'/',files_rfp(time_probe(j)).name]))];
+%         
+%         I_bf = [I_bf, mat2gray(imread([folder_name,'pos',num2str(ind_position(i)),'/',files_bf(time_probe(j)).name]))];
+% 
+%     end
+%         
+%     II_bf = [II_bf;I_bf];
+%     II_rfp = [II_rfp;I_rfp];
+%     II_yfp = [II_yfp;I_yfp]; 
+% %     I_yfp = mat2gray(I_yfp);
+% 
+%      
+%     
+%     %figure
+% %     imshowpair(I_yfp,I_rfp,'method','blend','scaling','none');
+%     %imshow(I_rfp,[0 1]);
+% 
+% end
 
 %%
-
-    II_yfp = mat2gray(II_yfp);
-    II_rfp = mat2gray(II_rfp);
-
-    III_bf = 0* repmat(II_bf,[1 1 3]);
-    
-    III_bf(:,:,2) = III_bf(:,:,2)+II_yfp;
-    III_bf(:,:,1) = III_bf(:,:,1)+II_rfp;
-    
-    figure(4)
-    imshow(III_bf);
-    
+% 
+%     II_yfp = mat2gray(II_yfp);
+%     II_rfp = mat2gray(II_rfp);
+% 
+%     III_bf = 0* repmat(II_bf,[1 1 3]);
+%     
+%     III_bf(:,:,2) = III_bf(:,:,2)+II_yfp;
+%     III_bf(:,:,1) = III_bf(:,:,1)+II_rfp;
+%     
+%     figure(4)
+%     imshow(III_bf);
+%     
 %% 20140701 Generate figure 1B for Mike
 
 close all;
