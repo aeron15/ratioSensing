@@ -24,3 +24,6 @@ driver_plot_SUPP_figures()
  
 %% generates the uptake heat maps
 Transporter_competition
+
+%% GROWTH DATA for the paper is downloaded from Dropbox gal_growth for C12/C13
+% Growth for replicates and gal4 and wt is stratedigm data gal_facs_S

@@ -103,9 +103,11 @@ mid_value = 2^-4;
 cutoff=0.2;
 
 figure(4)
-i=1
+i=1;
 for j = [1 2]
-    [x,y,s,a(i),b(i),a_d(i),a_u(i),b_d(i),b_u(i)] = SmoothHeatMap(D_area{j},1,0,cutoff,gal,glc,fit_cuttoff,mid_value);
+    [x,y,s,~,~,~,~,~,~] = SmoothHeatMap(D_area{j},1,0,cutoff,gal,glc,fit_cuttoff,mid_value);
+    %[x,y,s,a(i),b(i),a_d(i),a_u(i),b_d(i),b_u(i)] = SmoothHeatMap(D_area{j},1,0,cutoff,gal,glc,fit_cuttoff,mid_value);
+    
     plot(log2(x),log2(y),'o','markerfacecolor',color_vec(i,:),'color',color_vec(i,:),'markersize',2);hold on
     plot(log2(x),s(log2(x)),'color',color_vec(i,:),'linewidth',4); hold on;
     xlim([-9 0]);ylim([-9 2]);
@@ -116,6 +118,6 @@ axis square
 
 Set_fig_RE(figure(4),17,12,12)
 filename='Figure3A_decision_fronts_gal2_and_WT';
-%export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
 end
