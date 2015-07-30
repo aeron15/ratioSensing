@@ -24,13 +24,9 @@ function driver_plot_MAIN_figures()
 
 %% Generates the WT and the gal2 delete experiment for figure 3
 plot_Figure3
-figure4
 
 %% Plot schematic of figure 4A
 plot_fig4A
-
-
-
 
 %% Plot figure 1C. Plot S for separate replicates. Probably need the one for the data on the figure.
 %s288cSurfaceFit

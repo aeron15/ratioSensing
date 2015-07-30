@@ -1,8 +1,7 @@
 function plot_Figure3()
 %PLOT_FIGURE3
 %Deletion of GAL2 does not eliminate ratio sensing. Black and red lines are the decision front
-
-%% figure 4
+%inspired by figure 4
 
 number = {'01' '02' '03' '04' '05' '06' '07' '08' '09' '10' '11' '12'};
 well = {'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H'};
@@ -16,17 +15,11 @@ end
 th_const = 2.5;
 off_peak = 2;
 
-
 gal_final = [0 2.^[-9:0.5:2]];
 glc_final = [0 2.^[-9:0.5:0]];
 
 cmap=cbrewer('seq', 'YlOrRd', 25);
-%cmap=jet(100);
 
-%% gal2 delete WT
-
-%load('C:\Users\ys151\Dropbox\gal_paper\Data\20140517_gal2del_large2DG\output\plates_hists')
-%Renan path
 load('../data/20140517_gal2del_large2DG/output/plates_hists')
 
 glc = 2.^([-Inf   -7.5:0.5:0]);
@@ -50,7 +43,6 @@ for j = 1:length(glc_final)
 end
 E_area{i} = temp;
 
-
 [D_area{i},M_area{i}] = ParseHeatmapMat(E_area{i});
 
 figure(i)
@@ -65,10 +57,10 @@ colormap(cmap)
 
 Set_fig_RE(figure(i),17,12,12)
 
-filename=['Figure3A_gal2_delete'];
-%export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+filename='Figure3A_gal2delete';
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
-%% wT
+%% WT
 i=2;
 
 [E_area{i},E_prec{i},E_mean{i}] = Plates2matMch(plates,data,plates_hists,d,map,th_const,off_peak);
@@ -97,44 +89,19 @@ colorbar
 colormap(cmap)
 
 Set_fig_RE(figure(i),17,12,12)
-filename=['Figure3A_gal2delete_WT'];
-%export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+filename='Figure3A_WT';
+export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
-%% Make the S-plots
-
+%% Decision Fronts of gal2 delete and WT
 gal= gal_final(2:end);
 glc = glc_final(2:end);
-
-clear rat
-for i = 1:length(glc)
-    for j = 1:length(gal)
-        
-        rat(i,j) = gal(j)/glc(i);
-        
-    end
-end
-
 color_vec = [0 0 0;1 0 0;0 0 1;0 1/2 0];
 
-figure(3)
-for i = 1:2
-    plot(rat,D_area{i},'o','color',color_vec(i,:),'markersize',3,'markerfacecolor',color_vec(i,:));hold on;
-    set(gca,'xscale','log');
-    [XOut, YOut, ZOut] = prepareSurfaceData(gal, glc, D_area{i});
-    s = fit([XOut, YOut], ZOut,'c./(c + (y./x).^n)');
-    plot(rat,s.c./(s.c + (rat.^-s.n)),'color',color_vec(i,:),'linewidth',2)
-end
-box off;xlim([10^-3,10^3.4]);
-Set_fig_YS(figure(3),18,12,12);
 
-%% slopes
 fit_cuttoff = [2^-1 2^-9];
 mid_value = 2^-4;
 cutoff=0.2;
 
-
-clear a b a_d a_u b_d b_u
-% WT
 figure(4)
 i=1
 for j = [1 2]
@@ -144,21 +111,11 @@ for j = [1 2]
     xlim([-9 0]);ylim([-9 2]);
     i = i+1;
 end
-figure(4);axis square
-Set_fig_YS(figure(4),17,12,12)
 
-figure(5)
+axis square
 
-for i = 1:length(a)
-    subplot(1,2,1);
-    bar(i,a(i),'facecolor',color_vec(i,:));hold on;
-    errorbar(i,a(i),a(i)-a_d(i),a_u(i)-a(i),'.k');ylim([0.65 1.1]);xlim([0 4])
-    subplot(1,2,2);
-    hold on;bar(i,b(i),'facecolor',color_vec(i,:));
-    errorbar(i,b(i),b(i)-b_d(i),b_u(i)-b(i),'.k');ylim([0.65 2]);xlim([0 4])
-end
-figure(5);subplot(1,2,1);set(gca,'xtick',[]);axis square;box off;
-figure(5);subplot(1,2,2);set(gca,'xtick',[]);axis square;box off
-Set_fig_YS(figure(5),18,18,12)
+Set_fig_RE(figure(4),17,12,12)
+filename='Figure3A_decision_fronts_gal2_and_WT';
+%export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
 end
