@@ -20,7 +20,7 @@ function driver_plot_MAIN_figures()
 plot_Figure2C
 plot_Figure2D
 
-% figure3_YS
+figure3_YS
 
 %% Plot schematic of figure 4A
 plot_fig4A

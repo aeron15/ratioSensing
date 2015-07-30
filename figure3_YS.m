@@ -64,7 +64,7 @@ caxis([0, 1])
 Set_fig_RE(figure(1),12,12,12)
 filename=['Figure_2C_mig1_delete_jet'];
 % export_fig(filename, '-pdf','-transparent','-nocrop');
-
+%%
 i = 1;
 [D_mean{i},M_mean{i}] = ParseHeatmapMat(E_mean{i});
 
@@ -221,9 +221,10 @@ caxis([0, 1])
 
 Set_fig_RE(figure(6),12,12,12)
 
-% filename=[path_figures 'Figure_2C_gal80_delete_WT'];
-% export_fig(filename, '-pdf','-transparent','-nocrop');
+filename=[path_figures 'Figure_2C_gal80_delete_WT'];
+export_fig(filename, '-pdf','-transparent','-nocrop');
 
+%%
 
 % Compare gal80D to WT
 glc = [2.^[-6:1:0]];
@@ -421,3 +422,5 @@ Set_fig_YS(figure(7),17,12,12)
 %     ylim([1.5 4.5]);xlim([-7 0]);
 % end
 % Set_fig_RE(figure(4),12,12,12);
+
+display('done')
