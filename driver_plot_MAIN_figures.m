@@ -16,11 +16,13 @@ function driver_plot_MAIN_figures()
 % %Decision fronts, calculated as in B, for three strains of S. cerevisiae.
 % plot_figure1E
 
-%% Plots gal80 delete and mig1 delete
-plot_Figure2C
+%% Plots gal80 delete
+%plot_Figure2C
+
+%% Plot mig1 delete
 plot_Figure2D
 
-figure3_YS
+%figure3_YS
 
 %% Plot schematic of figure 4A
 plot_fig4A
