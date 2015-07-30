@@ -1,39 +1,39 @@
 function driver_plot_MAIN_figures()
 
-%% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
+% %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
 % plot_fig1B
 % plot_fig1B_histograms
 % plot_histograms_cellasic_fig1B
-%
+% 
 % %% Plot figure 1C.Fraction of inducing cells as a function of the ratio of galactose and glucose concentrations.
 % plot_figure1C
-%
+% 
 % %% Plot figure 1D()
 % %Comparison of models of signal integration (SI Appendix) by threshold sensing (Upper) and ratio sensing (Lower), displayed as in B and C.
 % plot_1D
-%
+% 
 % %% Plot decision fronts of BC187, YJM978 and S288C for panel E of figure 1.
 % %Decision fronts, calculated as in B, for three strains of S. cerevisiae.
 % plot_figure1E
+% 
+% %% Plots gal80 delete
+% plot_Figure2C
+% 
+% %% Plot mig1 delete
+% plot_Figure2D
 
-%% Plots gal80 delete
-plot_Figure2C
-
-%% Plot mig1 delete
-plot_Figure2D
-
-figure3_YS
+%% Generates the WT and the gal2 delete experiment for figure 3
+plot_Figure3
+figure4
 
 %% Plot schematic of figure 4A
 plot_fig4A
 
+
+
+
 %% Plot figure 1C. Plot S for separate replicates. Probably need the one for the data on the figure.
 %s288cSurfaceFit
-
-
-%% Generates the WT and the gal2 delete experiment
-%figure4
-
 %% Generates the different models of ratio sensing and how they can be achieved. Fix output data
 %figure2
 
