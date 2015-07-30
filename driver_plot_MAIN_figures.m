@@ -17,12 +17,12 @@ function driver_plot_MAIN_figures()
 % plot_figure1E
 
 %% Plots gal80 delete
-%plot_Figure2C
+plot_Figure2C
 
 %% Plot mig1 delete
 plot_Figure2D
 
-%figure3_YS
+figure3_YS
 
 %% Plot schematic of figure 4A
 plot_fig4A

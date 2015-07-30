@@ -222,7 +222,7 @@ caxis([0, 1])
 Set_fig_RE(figure(6),12,12,12)
 
 filename=[path_figures 'Figure_2C_gal80_delete_WT'];
-export_fig(filename, '-pdf','-transparent','-nocrop');
+%export_fig(filename, '-pdf','-transparent','-nocrop');
 
 %%
 
