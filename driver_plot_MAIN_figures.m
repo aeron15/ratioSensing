@@ -17,8 +17,7 @@ function driver_plot_MAIN_figures()
 % plot_figure1E
 
 %% Plots gal80 delete and mig1 delete
-% plot_Figure2
-% plot_Figure2C
+plot_Figure2C
 plot_Figure2D
 
 % figure3_YS

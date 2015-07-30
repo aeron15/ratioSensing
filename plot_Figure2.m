@@ -103,7 +103,7 @@ h = pcolor(M_area{i}/maxExp);
 set(h,'edgecolor','none');
 axis square
 set(gca,'xtick',[1 2 3 5:2:25]+0.5,'xticklabel',['No',' ', {-8:2:2}]);
-set(gca,'ytick',[1 2 3 5:2:22]+0.5,'yticklabel',['No',' ', {-7:2:0}]);
+set(gca,'ytick',[1 2 3 5:2:22]+0.5,'yticklabel',['No',' ', {-6:2:0}]);
 
 colorbar 
 %colormap(cmap)

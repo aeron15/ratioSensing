@@ -42,16 +42,20 @@ i = 1;
 
 figure('Name','gal80')
 h = pcolor(M_area{i});
-set(h,'edgecolor','none');
+set(h,'edgecolor','none');  
 axis square
+colormap(cmap)
+
 set(gca,'xtick',[1 2 3 5:2:25]+0.5,'xticklabel',['No',' ', {-8:2:2}]);
-set(gca,'ytick',[1 2 3 5:2:22]+0.5,'yticklabel',['No',' ', (-7:2:0)]);
+set(gca,'ytick',[1 2 3 5:2:22]+0.5,'yticklabel',['No',' ', {-6:2:0}]);
 
 colorbar 
 colormap(cmap)
 
-Set_fig_YS(figure(1),12,12,12)
+Set_fig_RE(figure(1),12,12,12)
 
 filename='Figure_2C_gal80delete';
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
+
+close all;
 

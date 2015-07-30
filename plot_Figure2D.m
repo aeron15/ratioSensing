@@ -55,4 +55,6 @@ Set_fig_RE(figure(1),12,12,12)
 filename='Figure_2D_mig1delete';
 export_fig_specific_path(filename, '-pdf','-transparent','-nocrop');
 
+close all;
+
 end
