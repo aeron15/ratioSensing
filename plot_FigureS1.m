@@ -69,7 +69,6 @@ Set_fig_RE(figure(1),12,12,12)
 %% Replicate 2
 plates = {'Plate_A' 'Plate_B' 'Plate_C' 'Plate_D' 'Plate_E' 'Plate_F'};
 d = [0,0;0,12;8,0;8,12;16,0;16,12];
-%load('C:\Users\ys151\Dropbox\gal_paper\Data\s288c\20140217_4283\output\plates_hists_EMD')
 load('../data/s288c/20140217_4283/output/plates_hists_EMD')
 
 data = struct2cell(plates_hists);
@@ -388,7 +387,7 @@ for i = [1 2 3]
 end
 
 % print('-dtiff','-r1000',[figure_folder,'1B']);
-%% Plot Contour 
+%% Plot Contour  REPLICATES S1 WOOOOOOO!!!!
 fit_cuttoff = [2^-2 2^-9];
 mid_value = 2^-4;
 cutoff=0.2;
@@ -401,7 +400,7 @@ glc_m = 2.^[-10:0.5:0.5];
 x_tick = log2(gal_m);
 y_tick = log2(glc_m)
 
-for i = [2 3 4]
+for i = [4]
  figure(i)
  if i == 2
      M_area{2}(7,3) = mean([M_area{2}(6,3),M_area{2}(8,3)]);

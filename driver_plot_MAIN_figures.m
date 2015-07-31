@@ -1,4 +1,5 @@
 function driver_plot_MAIN_figures()
+%PLOTS all figures of the main paper PNAS
 
 %% Plot figure 1B. Double gradient and decision front.s282cSurfaceFit also plots histograms figure 1.
 plot_fig1B
@@ -23,7 +24,7 @@ plot_Figure2C
 plot_Figure2D
 
 %% Plot gal80 delete mig1 delete
-
+plot_Figure2E
 
 %% Generates the WT and the gal2 delete experiment for figure 3
 %Deletion of GAL2 does not eliminate ratio sensing. Black and red lines are the decision front
@@ -35,33 +36,4 @@ plot_fig4A
 %% Plot modes of signal integration
 plot_Figure4B
 
-%>>>>>>>>>NEED TO REVISE CODE BELOW
-
-plot_FigureS1
-%% Plot figure 1C. Plot S for separate replicates. Probably need the one for the data on the figure.
-%s288cSurfaceFit
-%% Generates the different models of ratio sensing and how they can be achieved. Fix output data
-%figure2
-
-%% Plots the multiplication of the single input functions, I generated a separate version with the stitched data.
-% This script also plots the effect of depletion
-%predictResponse()
-%predict_response_multiplication()%from stitched data
-
-%% Plots the data of the heterozygous deletes
-%figureSI4
-
-%% Figure SI3. Plot data at different inoclum sizes and different decision fronts
-%figureSI3
-
-%% Compares the different metrics (area, mean, percentage) for an s288c replicate and for the BC187 (A10) strain. For supplementary table.
-% Check the version for the stitched data with lower concentrations. Many
-% figures of the main paper are here too.
-%CompareMetrics
-
-%% Compare Mig1 localization to gal80?
-%CompareMig1localiztionToGal80
-
-%% Plot previously assay concentrations of galactose and glucose. The lowest concentrations are actually NO  concentrations.
-%PlotDecision_Fronts_Table()
 end

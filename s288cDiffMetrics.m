@@ -8,7 +8,8 @@ clc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Load histograms and concentrations
 
 % s288c replicae 1
-load('C:\Users\ys151\Dropbox\gal_paper\Data\s288c\\20131019_2D_LG\output\plates_hists_EMD')
+%load('C:\Users\ys151\Dropbox\gal_paper\Data\s288c\\20131019_2D_LG\output\plates_hists_EMD')
+load ('../data/s288c/20131019_2D_LG/output/plates_hists_EMD')
 data = struct2cell(plates_hists);
 th_const = 2.5;
 off_peak = 2;
